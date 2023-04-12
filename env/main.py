@@ -1,4 +1,3 @@
-#get_ipython().system('pip install langchain')
 from langchain.document_loaders import UnstructuredPDFLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 
