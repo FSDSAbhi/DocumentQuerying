@@ -22,11 +22,6 @@ from langchain.vectorstores import Pinecone
 from langchain.embeddings.openai import OpenAIEmbeddings
 import pinecone
 
-'''
-#get_ipython().system('pip install pinecone-client')
-OPENAI_API_KEY = "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"
-PINECONE_API_KEY = "1a522964-dfde-4870-91eb-8a93b2aba674"
-'''
 PINECONE_API_ENV = "us-east1-gcp"
 embeddings = OpenAIEmbeddings(openai_api_key = OPENAI_API_KEY)
 
@@ -38,7 +33,6 @@ index_name = "testindex1"
 
 docsearch = Pinecone.from_texts([t.page_content for t in texts],embeddings,index_name = index_name)
 
-#get_ipython().system('pip install tiktoken')
 
 query = "What are the basic principles for management?"
 docs = docsearch.similarity_search(query, include_metadata = True)
